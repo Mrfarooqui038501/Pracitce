@@ -17,7 +17,9 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <MyComponent/> {/* here we are calling it */}
+      <MyComponent message = "I am new" /> {/* here we are calling it */}
+      <MyComponent message = "I am going to learn react " /> {/* here we are calling it */}
+      <MyComponent message = "Hey is my changes visible" /> {/* here we are calling it */}
       
       
 
