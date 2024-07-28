@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    // in the below code i used js and html
+    // const heading = document.createElement('h1');
+    // heading.innerHTML = "hey I am learing React";
+    // const rootEl = document.querySelector('#root');
+    // rootEl.appendChild(heading);
+
+    // first get the root element because all the things are going to store in root elements only
+    const rootEl = document.getElementById('root') // here we got the root element
+
+    // now we will create and element using react(React.createeElement)
+    // for creating an element in react we need three arguements 
+    // 1. Tag name, 2. properties of the element (props) , 3. Children of the element. 
+    //const heading = React.createElement('hi',null,'HEY There I am from react') // here we created the root element we passed null becuase we don't want to pass any value now
+     // const heading = React.createElement('hi',{
+      //  style:{color:'purple'}
+   // },'HEY There I am from react') in this one we are using props(properties) as well 
+
+    // Now will render the element DOM using ReactDOM
+    // for rendering any element to dom it takes two arguements
+    //1. The react element that you want to render, 2.  and the Dom element where you want to render the react element 
+    //ReactDOM.render(heading,rootEl);
+
+    // below code writen in JSX        
+    // function App(){
+    //     return <h1> I am learing React </h1>  // here we are mentioning the h1 tag 
+    // }
+    //  ReactDOM.render(<App/>,rootEl)  // here we are rendering it using reactDOM
+</script>
+
+</html>
