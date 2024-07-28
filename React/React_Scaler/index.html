@@ -2,66 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
- </head>
- <body>
-    <!--  As all the things we will build, will go inside the root. -->
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
     <div id="root"></div>
- </body>
-    <script type="text/babel">
-        /*const heading = document.createElement('h1')
-        heading.innerHTML =  'Hello world'
-        const rootEl = document.getElementById('root')
-        rootEl.appendChild(heading) */
+</body>
+<script type="text/babel">
+    // in the below code i used js and html
+    // const heading = document.createElement('h1');
+    // heading.innerHTML = "hey I am learing React";
+    // const rootEl = document.querySelector('#root');
+    // rootEl.appendChild(heading);
 
-        /*const heading = document.createElement('h1')
-        heading.innerHTML = 'I am learing React'
-        const rootEl = document.getElementById('root')
-        rootEl.appendChild(heading)*/
+    // first get the root element because all the things are going to store in root elements only
+    const rootEl = document.getElementById('root') // here we got the root element
 
-        /*// first we will get the root element 
-        const rootEl = document.getElementById('root')
-        // now we will create an element using react 
-        //  atleast three arguments are taken by it.
-        // 1. tag  name, 2. properties of the elemetns (props), 3. children of this element 
-        const heading = React.createElement('h1','null','This is react');
+    // now we will create and element using react(React.createeElement)
+    // for creating an element in react we need three arguements 
+    // 1. Tag name, 2. properties of the element (props) , 3. Children of the element. 
+    //const heading = React.createElement('hi',null,'HEY There I am from react') // here we created the root element we passed null becuase we don't want to pass any value now
+     // const heading = React.createElement('hi',{
+      //  style:{color:'purple'}
+   // },'HEY There I am from react') in this one we are using props(properties) as well 
 
-        // we will render the element to the dom using react 
-        // and react domm takes two arguments -- 1. The react element, 2.DOM element where the React element should be mounted
-         ReactDOM.render(heading,rootEl) */
-            
-         /*this is  withiout using "Props(properties )"
-         const Elroot = document.getElementById("root")
-         const heading = React.createElement('h1',null,'I am learning React Today')
-         ReactDOM.render(heading,Elroot)*/
+    // Now will render the element DOM using ReactDOM
+    // for rendering any element to dom it takes two arguements
+    //1. The react element that you want to render, 2.  and the Dom element where you want to render the react element 
+    //ReactDOM.render(heading,rootEl);
 
-         /* react with props 
-         const Elroot = document.getElementById("root")
-         const heading = React.createElement('h1',{
-            style: {color:'blue',backgroundColor:'green'}
-         },'I am learning React Today')
-         ReactDOM.render(heading,Elroot) */
-
-         // JSX code is below 
-         /*const rootEl = document.getElementById('root');
-         function App() {
-            return <h1> This is from JSX </h1>
-         }
-         ReactDOM.render(<App />, rootEl)*/
-
-         /*const elRoot = document.getElementById('root')
-         function App() {
-            return <h1> Hey I am learing JSX</h1>
-         }
-
-         ReactDOM.render(<App/>,elRoot) */
-
-    </script>
-   
-    
+    // below code writen in JSX        
+    function App(){
+        return <h1> I am learing React </h1>  // here we are mentioning the h1 tag 
+    }
+     ReactDOM.render(<App/>,rootEl)  // here we are rendering it using reactDOM
+</script>
 
 </html>
