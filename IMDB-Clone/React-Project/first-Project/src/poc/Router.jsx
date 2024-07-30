@@ -1,5 +1,5 @@
-import React from "react"
-import { Link,Routes,Route,useParams } from "react-router-dom"
+import React, { useEffect, useState } from "react"
+import { Link,Routes,Route,useParams, useInRouterContext } from "react-router-dom"
 
 function About(){
     return<h1>I am from About page </h1>
@@ -19,11 +19,34 @@ function PageNotFound(){
 
 function Users(props){
 console.log(props)
-let params = useParams();
-console.log(params);
+  let {userId} = useParams();
 
-const id = params.userId;
-return <h2>I am user with the ID ={id}</h2>
+let [user, setUser] = useState(null);
+const[isLoading,setisLoading] = useState(false)
+
+useEffect(() =>{
+    async function apiCall(){
+     setisLoading(true)   
+    const resp = await fetch(`https://fakestoreapi.com/users/${userId}`);
+    const data = await resp.json();
+    setisLoading(false)
+    console.log(data)
+    setUser(data);
+    }
+    apiCall()
+},[])
+
+return <>
+{isLoading && user === null? <h3>Loading....</h3>:null}
+{!isLoading && user ? <>
+
+<h4>User First name:{user?.name?.firstname}</h4>
+<h4>User Last name:{user?.name?.lastname}</h4>
+<h4>User email:{user?.email}</h4>
+</> : null}
+{!isLoading && user === null ?<h5>Data not found</h5>:null}
+
+</>
 }
 
 function Routing(){
@@ -41,7 +64,7 @@ function Routing(){
                <Link to = {'/product'} >Product</Link> 
                </li>
             <li>
-               <Link to = {'/users/898'} >Users</Link> 
+               <Link to = {'/users/1'} >Users</Link> 
                </li>
             </ul>
         </nav>
